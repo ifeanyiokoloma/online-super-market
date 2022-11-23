@@ -1,0 +1,139 @@
+:root {
+  --theme-color: #800080;
+  --dark-theme: rgb(61, 52, 59);
+  --light-theme: rgb(245, 202, 231);
+  --spacing: 1em;
+  --spacing-md: 2em;
+  --spacing-lg: 3em;
+  --text-size: 1.2rem;
+  --fullpage: 100vh;
+  --nav-size: 60px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  background-color: var(--light-theme);
+}
+
+nav {
+    height: var(--nav-size);
+    padding: var(--spacing-md);
+    display: flex;
+    align-items: center;
+    /* gap: var(--spacing-md); */
+    justify-content: space-between;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    gap: var(--spacing-md);
+    align-items: center;
+}
+
+.links-btn {
+    background-color: transparent;
+    border: 0;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: .1em;
+}
+
+[role] {
+    font-family: Verdana, Geneva, sans-serif;
+    text-transform: uppercase;
+}
+
+.bar {
+    background-color: black;
+    margin: auto;
+    width: 90%;
+    height: 1px;
+    /* background-color: #fff; */
+}
+
+.one {
+  grid-area: one;
+}
+
+.two {
+  grid-area: two;
+}
+
+header {
+  grid-area: heading;
+  text-align: center;
+}
+
+header h1 {
+    text-transform: uppercase;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.three {
+  grid-area: three;
+}
+
+.four {
+  grid-area: four;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 2fr auto 2fr;
+  grid-template-areas:
+    "one two"
+    "heading heading"
+    "three four";
+  padding: var(--spacing-md);
+  gap: var(--spacing-md);
+  height: calc(var(--fullpage) - var(--nav-size));
+}
+
+.image-box {
+    height: 100%;
+    position: relative;
+}
+
+.products {
+  /* border: 2px solid var(--theme-color); */
+  position: relative;
+  box-shadow: 5px 5px 5px 2px rgba(0,0,0,.3);
+}
+
+.products p {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    color: black;
+    width: 100%;
+    backdrop-filter: blur(3px);
+    background-color: rgba(255, 255, 255, .3);
+    padding-left: .2em;
+    padding-bottom: .2em;
+    border-top: 1px solid rgb(255, 255, 255, .7)
+}
